@@ -39,7 +39,7 @@ const Header = () => {
   let [mobileMenu, openMobileMenu] = useState(false);
 
   return (
-    <nav className="w-full h-20 md:px-4 lg:px-10 flex items-center justify-around shadow-md text-gray-900">
+    <nav className="w-full h-20 md:px-4 smb:px-3 lg:px-32 flex items-center justify-between shadow-md text-gray-900">
       <Link href={"/"}>
         <div className="w-14 h-14">
           <Image src={Logo} />
@@ -121,10 +121,14 @@ const Header = () => {
           <ShoppingCartIcon className="w-7 h-7 lg:mx-10 md:mx-0" />
         </button>
         <div className="smb:hidden sm:block">
-          <button className="font-bold md:mx-4 lg:mx-10">Signin</button>
-          <button className="bg-purple-600 md:mx-4 mx-10 text-white font-bold px-4 py-2 rounded-md hover:bg-white border-2 hover:text-gray-900 border-purple-600">
-            Signup
-          </button>
+          <Link href={"/signin"}>
+            <button className="font-bold md:mx-4 lg:mx-10">Signin</button>
+          </Link>
+          <Link href={"/signup"}>
+            <button className="bg-purple-600 md:mx-4 mx-10 text-white font-bold px-4 py-2 rounded-md hover:bg-white border-2 hover:text-gray-900 border-purple-600">
+              Signup
+            </button>
+          </Link>
         </div>
         <button onClick={() => openMobileMenu(!mobileMenu)}>
           <MenuAlt1Icon className="w-10 h-10 sm:hidden" />
