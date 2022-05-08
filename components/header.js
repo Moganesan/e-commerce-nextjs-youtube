@@ -3,31 +3,37 @@ import Logo from "../public/logo.svg";
 import { ShoppingCartIcon, ChevronDownIcon } from "@heroicons/react/solid";
 import { Popover, Transition } from "@headlessui/react";
 import { Fragment } from "react";
+import Link from "next/link";
 
 const Categories = [
   {
-    name: "Fasion",
+    name: "Plain T-Shirts",
     description:
       "Elit anim Lorem est velit sit est non fugiat aute ipsum minim reprehenderit.",
     href: "##",
+    icon: "/fasion-product-1.jpg",
   },
   {
-    name: "Electronics",
+    name: "Hoodies",
     description:
       "Aute eiusmod irure est reprehenderit sit ullamco officia proident in voluptate eu ex veniam ex.",
     href: "##",
+    icon: "hoodies-product-1.jpg",
   },
   {
-    name: "Grocerry",
+    name: "Coffe Mugs",
     description: "Reprehenderit nisi qui nostrud do eiusmod nulla.",
     href: "##",
+    icon: "mugs-product-1.jpg",
   },
 ];
 const Header = () => (
   <nav className="w-full h-20 px-10 flex items-center justify-around shadow-md text-gray-900">
-    <div className="w-14 h-14">
-      <Image src={Logo} />
-    </div>
+    <Link href={"/"}>
+      <div className="w-14 h-14">
+        <Image src={Logo} />
+      </div>
+    </Link>
     <div className="flex items-center">
       <input
         className="w-72 bg-gray-100 py-2 px-5 rounded-sm outline-none mr-40"
@@ -66,7 +72,9 @@ const Header = () => (
                         href={item.href}
                         className="-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                       >
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center text-white sm:h-12 sm:w-12"></div>
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center text-white sm:h-12 sm:w-12">
+                          <img src={item.icon} />
+                        </div>
                         <div className="ml-4">
                           <p className="text-sm font-medium text-gray-900">
                             {item.name}
